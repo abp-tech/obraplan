@@ -6,8 +6,8 @@
     <title>Obraplan Marketplace</title>
     <style>
         :root {
-            --primary: #1e293b;
-            --accent: #2563eb;
+            --primary: #1E1132;
+            --accent: #155DFC;
             --bg: #f8fafc;
             --card-bg: #ffffff;
             --text: #334155;
@@ -40,6 +40,9 @@
         }
 
         .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
             font-size: 1.25rem;
             font-weight: 800;
             color: var(--primary);
@@ -49,6 +52,7 @@
         .logo span {
             color: var(--accent);
         }
+        .logo img { display: block; width: 150px; height: auto; }
 
         .back-link {
             display: inline-flex;
@@ -143,7 +147,7 @@
 
     <!-- Navegació amb opció de tornar a Obraplan.es -->
     <nav>
-        <a href="/" class="logo">Obraplan <span>Marketplace</span></a>
+        <a href="/" class="logo"><img src="/assets/obra-plan.svg" width="552" height="121" alt="Obra Plan"><span>Marketplace</span></a>
         <a href="/" class="back-link">&larr; Tornar a Obraplan</a>
     </nav>
 

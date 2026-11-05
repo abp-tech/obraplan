@@ -6,7 +6,7 @@
   <meta name="description" content="Obra Plan reúne soluciones digitales para el sector de la construcción.">
   <title>Obra Plan · Prototipo de estructura</title>
   <style>
-    :root { --ink:#14213d; --body:#475569; --blue:#2458dc; --line:#dce3ed; --soft:#f5f7fb; }
+    :root { --ink:#1E1132; --body:#514A5F; --blue:#155DFC; --line:#ddd9e5; --soft:#f7f7fa; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
     body { margin:0; color:var(--body); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
@@ -23,8 +23,8 @@
     .prototype { padding:8px 16px; text-align:center; background:#edf2fb; color:#405575; font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
     header { border-bottom:1px solid var(--line); }
     .header-inner { display:flex; align-items:center; justify-content:space-between; min-height:72px; gap:20px; }
-    .logo { color:var(--ink); font-size:1.35rem; font-weight:800; letter-spacing:-.055em; text-decoration:none; }
-    .logo span { color:var(--blue); }
+    .logo { display:inline-flex; align-items:center; text-decoration:none; }
+    .logo img { display:block; width:180px; height:auto; }
     nav { display:flex; gap:24px; }
     nav a { text-decoration:none; font-size:.92rem; font-weight:650; }
     nav a:hover,footer a:hover { color:var(--blue); text-decoration:underline; }
@@ -39,9 +39,10 @@
     .card { display:flex; flex-direction:column; min-height:275px; padding:28px; border:1px solid var(--line); border-radius:16px; }
     .status { align-self:flex-start; margin-bottom:25px; padding:5px 10px; border-radius:7px; background:#edf2ff; color:var(--blue); font-size:.72rem; font-weight:800; text-transform:uppercase; }
     .card p { font-size:.95rem; }
+    .erp-logo { display:block; width:min(205px,100%); height:auto; margin:1px 0 17px; }
     .card-end { margin-top:auto; padding-top:15px; color:var(--blue); font-size:.86rem; font-weight:750; }
     .card-end.muted { color:#687689; }
-    .quiet { padding:35px 0; background:#f8fafc; border-top:1px solid var(--line); }
+    .quiet { padding:35px 0; background:var(--soft); border-top:1px solid var(--line); }
     .quiet p { max-width:800px; margin:0; font-size:.91rem; }
     .quiet a { color:var(--ink); font-weight:700; }
     footer { padding:28px 0; border-top:1px solid var(--line); color:#697689; font-size:.84rem; }
@@ -55,11 +56,11 @@
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
   <div class="prototype">Prototipo de estructura · contenido por validar</div>
-  <header><div class="wrap header-inner"><a class="logo" href="/" aria-label="Obra Plan, inicio">Obra<span>Plan</span></a><nav aria-label="Navegación principal"><a href="#productos">Productos</a></nav></div></header>
+  <header><div class="wrap header-inner"><a class="logo" href="/" aria-label="Obra Plan, inicio"><img src="/assets/obra-plan.svg" width="552" height="121" alt="Obra Plan"></a><nav aria-label="Navegación principal"><a href="#productos">Productos</a></nav></div></header>
   <main id="contenido">
     <section class="hero"><div class="wrap"><span class="eyebrow">Software para construcción</span><h1>Un entorno para el trabajo de obra.</h1><p class="lead">Obra Plan reúne soluciones digitales para gestionar información, coordinar equipos y seguir la actividad de construcción. Aquí encontrarás sus productos y complementos a medida que evolucionen.</p><a class="button" href="#productos">Conocer los productos ↓</a></div></section>
     <section class="section" id="productos"><div class="wrap"><div class="section-head"><span class="eyebrow">Productos Obra Plan</span><h2>Un catálogo que crece con el sector.</h2><p>Estas fichas muestran el recorrido previsto. Las prestaciones definitivas se publicarán cuando estén validadas.</p></div><div class="grid">
-      <article class="card"><span class="status">En evolución</span><h3>Obra Plan ERP</h3><p>Gestión de obras, tareas, costes y documentación para conectar a gerencia y equipos de obra.</p><span class="card-end muted">Ficha comercial por preparar</span></article>
+      <article class="card"><span class="status">En evolución</span><h3><img class="erp-logo" src="/assets/obra-plan-erp.svg" width="540" height="121" alt="Obra Plan ERP"></h3><p>Gestión de obras, tareas, costes y documentación para conectar a gerencia y equipos de obra.</p><span class="card-end muted">Ficha comercial por preparar</span></article>
       <article class="card"><span class="status">Prototipo inicial</span><h3>Obra Plan Marketplace</h3><p>Espacio sectorial cuya propuesta funcional sigue en definición.</p><a class="card-end" href="/marketplace/">Ver prototipo de Marketplace ↗</a></article>
       <article class="card"><span class="status">Concepto</span><h3>Obra Plan Control</h3><p>Control de presencia y fichaje de operarios en obra. Su funcionamiento y alcance se concretarán más adelante.</p><span class="card-end muted">Ficha comercial por preparar</span></article>
     </div></div></section>
