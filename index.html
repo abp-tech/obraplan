@@ -1,149 +1,70 @@
-<!DOCTYPE html>
-<html lang="ca">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Obraplan</title>
-    <style>
-        :root {
-            --primary: #1e293b;
-            --accent: #2563eb;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text: #334155;
-            --text-light: #64748b;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-        }
-
-        header p {
-            color: var(--text-light);
-            font-size: 1.125rem;
-            margin-bottom: 40px;
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            width: 100%;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1fr solid #e2e8f0;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: left;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border-color: var(--accent);
-        }
-
-        .card h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .card p {
-            color: var(--text-light);
-            font-size: 0.975rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .card .btn-text {
-            color: var(--accent);
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        footer {
-            margin-top: 50px;
-            color: var(--text-light);
-            font-size: 0.875rem;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Obra Plan reúne soluciones digitales para el sector de la construcción.">
+  <title>Obra Plan · Prototipo de estructura</title>
+  <style>
+    :root { --ink:#14213d; --body:#475569; --blue:#2458dc; --line:#dce3ed; --soft:#f5f7fb; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--body); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid #8aaaff; outline-offset:4px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { color:var(--ink); line-height:1.16; letter-spacing:-.035em; }
+    h1 { max-width:780px; font-size:clamp(2.8rem,6vw,5rem); margin-bottom:22px; }
+    h2 { font-size:clamp(2rem,3vw,3rem); margin-bottom:14px; }
+    h3 { font-size:1.4rem; margin-bottom:10px; }
+    .wrap { width:min(1120px,calc(100% - 40px)); margin:auto; }
+    .skip { position:absolute; top:-60px; left:16px; padding:8px 14px; background:var(--ink); color:#fff; }
+    .skip:focus { top:10px; }
+    .prototype { padding:8px 16px; text-align:center; background:#edf2fb; color:#405575; font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    header { border-bottom:1px solid var(--line); }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; min-height:72px; gap:20px; }
+    .logo { color:var(--ink); font-size:1.35rem; font-weight:800; letter-spacing:-.055em; text-decoration:none; }
+    .logo span { color:var(--blue); }
+    nav { display:flex; gap:24px; }
+    nav a { text-decoration:none; font-size:.92rem; font-weight:650; }
+    nav a:hover,footer a:hover { color:var(--blue); text-decoration:underline; }
+    .hero { padding:96px 0 108px; background:var(--soft); }
+    .eyebrow { display:block; margin-bottom:18px; color:var(--blue); font-size:.75rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .lead { max-width:690px; margin-bottom:30px; font-size:clamp(1.08rem,1.4vw,1.25rem); }
+    .button { display:inline-flex; align-items:center; min-height:48px; padding:12px 20px; border-radius:10px; background:var(--blue); color:#fff; text-decoration:none; font-size:.91rem; font-weight:750; }
+    .button:hover { background:#1643ba; }
+    .section { padding:88px 0; }
+    .section-head { max-width:740px; margin-bottom:34px; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+    .card { display:flex; flex-direction:column; min-height:275px; padding:28px; border:1px solid var(--line); border-radius:16px; }
+    .status { align-self:flex-start; margin-bottom:25px; padding:5px 10px; border-radius:7px; background:#edf2ff; color:var(--blue); font-size:.72rem; font-weight:800; text-transform:uppercase; }
+    .card p { font-size:.95rem; }
+    .card-end { margin-top:auto; padding-top:15px; color:var(--blue); font-size:.86rem; font-weight:750; }
+    .card-end.muted { color:#687689; }
+    .quiet { padding:35px 0; background:#f8fafc; border-top:1px solid var(--line); }
+    .quiet p { max-width:800px; margin:0; font-size:.91rem; }
+    .quiet a { color:var(--ink); font-weight:700; }
+    footer { padding:28px 0; border-top:1px solid var(--line); color:#697689; font-size:.84rem; }
+    .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:18px; }
+    footer a { color:var(--ink); text-decoration:none; font-weight:650; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:18px; }
+    @media(max-width:760px) { .header-inner { min-height:64px; } nav { gap:14px; } .hero { padding:68px 0 78px; } .section { padding:64px 0; } .grid { grid-template-columns:1fr; } .card { min-height:220px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <header>
-            <h1>Obraplan</h1>
-            <p>Plataforma de gestió i mercat per al sector de la construcció.</p>
-        </header>
-
-        <div class="cards-grid">
-            <!-- Enllaç 1: Obraplan -->
-            <a href="/" class="card">
-                <div>
-                    <h2>Obraplan <span>&rarr;</span></h2>
-                    <p>Accedeix a la plataforma principal i informació general del projecte Obraplan.</p>
-                </div>
-                <span class="btn-text">Anar a Obraplan</span>
-            </a>
-
-            <!-- Enllaç 2: Obraplan Marketplace -->
-            <a href="/marketplace" class="card">
-                <div>
-                    <h2>Obraplan Marketplace <span>&rarr;</span></h2>
-                    <p>Explora el mercat de materials, eines i serveis directament a la nostra secció dedicada.</p>
-                </div>
-                <span class="btn-text">Anar al Marketplace</span>
-            </a>
-        </div>
-
-        <footer>
-            &copy; Obraplan. Tots els drets reservats.
-        </footer>
-    </div>
-
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="prototype">Prototipo de estructura · contenido por validar</div>
+  <header><div class="wrap header-inner"><a class="logo" href="/" aria-label="Obra Plan, inicio">Obra<span>Plan</span></a><nav aria-label="Navegación principal"><a href="#productos">Productos</a></nav></div></header>
+  <main id="contenido">
+    <section class="hero"><div class="wrap"><span class="eyebrow">Software para construcción</span><h1>Un entorno para el trabajo de obra.</h1><p class="lead">Obra Plan reúne soluciones digitales para gestionar información, coordinar equipos y seguir la actividad de construcción. Aquí encontrarás sus productos y complementos a medida que evolucionen.</p><a class="button" href="#productos">Conocer los productos ↓</a></div></section>
+    <section class="section" id="productos"><div class="wrap"><div class="section-head"><span class="eyebrow">Productos Obra Plan</span><h2>Un catálogo que crece con el sector.</h2><p>Estas fichas muestran el recorrido previsto. Las prestaciones definitivas se publicarán cuando estén validadas.</p></div><div class="grid">
+      <article class="card"><span class="status">En evolución</span><h3>Obra Plan ERP</h3><p>Gestión de obras, tareas, costes y documentación para conectar a gerencia y equipos de obra.</p><span class="card-end muted">Ficha comercial por preparar</span></article>
+      <article class="card"><span class="status">Prototipo inicial</span><h3>Obra Plan Marketplace</h3><p>Espacio sectorial cuya propuesta funcional sigue en definición.</p><a class="card-end" href="/marketplace/">Ver prototipo de Marketplace ↗</a></article>
+      <article class="card"><span class="status">Concepto</span><h3>Obra Plan Control</h3><p>Control de presencia y fichaje de operarios en obra. Su funcionamiento y alcance se concretarán más adelante.</p><span class="card-end muted">Ficha comercial por preparar</span></article>
+    </div></div></section>
+    <section class="quiet" id="empresa"><div class="wrap"><p>Obra Plan es el primer desarrollo de <a href="https://abp-software-prototipo-2026.rea-de-traba-9765.chatgpt.site/empresa/" title="Prototipo privado de ABP Software">ABP Software ↗</a>, la empresa que impulsa su evolución y podrá crear otras soluciones independientes.</p></div></section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© Obra Plan · Prototipo de estructura, 2026</span><div class="footer-links"><a href="https://abp-software-prototipo-2026.rea-de-traba-9765.chatgpt.site/empresa/" title="Prototipo privado de ABP Software">La empresa ↗</a><a href="https://abp-software-prototipo-2026.rea-de-traba-9765.chatgpt.site/trabaja-con-nosotros/" title="Prototipo privado de ABP Software">Trabaja con nosotros ↗</a></div></div></footer>
 </body>
 </html>
